@@ -1,0 +1,9 @@
+<h1><%= @attraction.name %></h1>
+
+<%= form_for(@attraction, url: ride_path(@attraction), method: :post) do |f| %>
+  <%= submit_tag "Go on this ride" %>
+<% end %>
+
+<% if current_user.admin == true %>
+  <%= link_to "Edit Attraction", edit_attraction_path %>
+<% end %>
